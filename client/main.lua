@@ -75,7 +75,7 @@ AddEventHandler('InteractSound_CL:PlayWithinDistance', function(playerNetId, max
         SendNUIMessage({
             transactionType     = 'playSound',
             transactionFile     = soundFile,
-            transactionVolume   = soundVolume
+            transactionVolume   = (1 - (distIs/maxDistance)) * soundVolume
         })
     end
 end)
